@@ -18,6 +18,12 @@ else
     real_user=$(whoami)
 fi
 
+
+echo "Update apt"
+echo "==========="
+apt-get update
+echo "Done."
+
 echo "Install Git"
 echo "==========="
 apt-get install -y git
