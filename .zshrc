@@ -8,7 +8,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="ys"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -99,6 +99,11 @@ source $ZSH/oh-my-zsh.sh
 
 eval $(thefuck --alias)
 
+# Python section
+alias pip3-install="pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple"
+alias pip-install="pip install -i https://pypi.tuna.tsinghua.edu.cn/simple"
+
+# Node section
 alias npm="docker exec -it node-dev npm"
 alias node="docker exec -it node-dev node"
 alias start-node="docker run --rm -itd -v node_modules:/project/node_modules -v node_modules_global:/usr/local/lib/node_modules -v `pwd`:/project --name node-dev node:8-alpine"
