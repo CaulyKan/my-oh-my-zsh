@@ -37,3 +37,7 @@ echo Linking .zshrc
 echo ==============
 rm .zshrc
 ln .oh-my-zsh/my-oh-my-zsh/.zshrc .zshrc
+
+echo ==============================
+echo Penguin Init Script Completed.
+echo use 'source .zshrc' to apply zsh config.
