@@ -15,3 +15,17 @@ echo Install oh-my-zsh
 echo =================
 apt-get install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo Clone my-oh-my-zsh
+echo ==================
+rm -rf .oh-my-zsh/my-oh-my-zsh
+git clone https://github.com/CaulyKan/my-oh-my-zsh.git .oh-my-zsh/my-oh-my-zsh
+
+echo Linking .zshrc
+echo ==============
+rm .zshrc
+ln .oh-my-zsh/my-oh-my-zsh/.zshrc .zshrc
+
+echo Source .zshrc
+echo =============
+source .zshrc
