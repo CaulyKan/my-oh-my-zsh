@@ -14,18 +14,22 @@ apt-get install -y git
 echo Install oh-my-zsh
 echo =================
 apt-get install -y zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+(. sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)")
+
+echo Install powerlevel9k theme
+git clone https://github.com/bhilburn/powerlevel9k.git .oh-my-zsh/custom/themes/powerlevel9k
 
 echo Clone my-oh-my-zsh
 echo ==================
 rm -rf .oh-my-zsh/my-oh-my-zsh
 git clone https://github.com/CaulyKan/my-oh-my-zsh.git .oh-my-zsh/my-oh-my-zsh
 
+echo Install thefuck
+echo ===============
+apt-get install -y python3-pip
+pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple thefuck 
+
 echo Linking .zshrc
 echo ==============
 rm .zshrc
 ln .oh-my-zsh/my-oh-my-zsh/.zshrc .zshrc
-
-echo Source .zshrc
-echo =============
-source .zshrc
