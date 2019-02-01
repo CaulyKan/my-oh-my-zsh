@@ -67,7 +67,6 @@ plugins=(
   command-not-found
   cp
   extract
-  per-directory-history
   z
   docker
 )

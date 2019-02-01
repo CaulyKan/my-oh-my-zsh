@@ -7,6 +7,17 @@ echo "              |___|                                               |_|     
 
 cd ~
 
+if ! [ $(id -u) = 0 ]; then
+   echo "The script need to be run as root." >&2
+   exit 1
+fi
+
+if [ $SUDO_USER ]; then
+    real_user=$SUDO_USER
+else
+    real_user=$(whoami)
+fi
+
 echo Install Git
 echo ===========
 apt-get install -y git
@@ -14,12 +25,14 @@ apt-get install -y git
 echo Install oh-my-zsh
 echo =================
 apt-get install -y zsh
+alias exit=return
 (. sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)")
+unalias exit
 
 echo Clone my-oh-my-zsh
 echo ==================
 rm -rf .oh-my-zsh/my-oh-my-zsh
-git clone https://github.com/CaulyKan/my-oh-my-zsh.git .oh-my-zsh/my-oh-my-zsh
+sudo -u $real_user git clone https://github.com/CaulyKan/my-oh-my-zsh.git .oh-my-zsh/my-oh-my-zsh
 
 echo Config python
 echo =============
@@ -36,7 +49,7 @@ apt-get install -y tldr
 echo Linking .zshrc
 echo ==============
 rm .zshrc
-ln .oh-my-zsh/my-oh-my-zsh/.zshrc .zshrc
+sudo -u $real_user ln .oh-my-zsh/my-oh-my-zsh/.zshrc .zshrc
 
 echo ==============================
 echo Penguin Init Script Completed.
