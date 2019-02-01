@@ -103,6 +103,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# avoid problems on windows
+case $(uname -a) in
+   *Microsoft*) unsetopt BG_NICE ;;
+esac
+
+# thefuck section
 eval $(thefuck --alias)
 
 # Python section
