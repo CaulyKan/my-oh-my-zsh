@@ -27,7 +27,7 @@ echo "Install oh-my-zsh"
 echo "================="
 apt-get install -y zsh
 alias exit=return
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sudo -u $real_user sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 unalias exit
 echo "Done."
 
