@@ -48,10 +48,12 @@ echo "============="
 apt-get install -y python3-pip
 echo "Done."
 
-echo "Install thefuck"
-echo "==============="
-pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple thefuck 
-echo "Done."
+echo "Install docker"
+echo "=============="
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+apt-get update
+apt-get install -y docker-ce
 
 echo "Install tldr"
 echo "==============="
