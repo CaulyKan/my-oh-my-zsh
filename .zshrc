@@ -108,14 +108,14 @@ case $(uname -a) in
 esac
 
 # thefuck section
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # Python section
 alias pip3-install="pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple"
 alias pip-install="pip install -i https://pypi.tuna.tsinghua.edu.cn/simple"
 
 # Node section
-alias npm="docker exec -it node-dev npm"
-alias node="docker exec -it node-dev node"
-alias node-here="docker run --rm -itd -v node_modules:/project/node_modules -v node_modules_global:/usr/local/lib/node_modules -v `pwd`:/project --name node-dev node:8-alpine"
-alias node-stop="docker stop node-dev"
+# alias npm="docker exec -it node-dev npm"
+# alias node="docker exec -it node-dev node"
+# alias node-here="docker run --rm -itd -v node_modules:/project/node_modules -v node_modules_global:/usr/local/lib/node_modules -v `pwd`:/project --name node-dev node:8-alpine"
+# alias node-stop="docker stop node-dev"
