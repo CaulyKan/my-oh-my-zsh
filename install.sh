@@ -66,5 +66,12 @@ rm .zshrc
 sudo -u $real_user ln .oh-my-zsh/my-oh-my-zsh/.zshrc .zshrc
 echo "Done."
 
+echo "Installing VIM"
+echo "=============="
+apt-get install -y vim
+rm -rf ~/.vim
+ln -s .oh-my-zsh/my-oh-my-zsh/.vim ~/.vim
+
+echo "==============================="
 echo "Penguin Init Script Completed."
 echo "source .zshrc"
