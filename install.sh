@@ -34,13 +34,14 @@ echo "================="
 apt-get install -y zsh
 alias exit=return
 sudo -u $real_user sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/jeffreytse/zsh-vi-mode ~/.oh-my-zsh/custom/plugins/zsh-vi-mode
 unalias exit
 echo "Done."
 
 echo "Clone my-oh-my-zsh"
 echo "=================="
 rm -rf .oh-my-zsh/my-oh-my-zsh
-sudo -u $real_user git clone https://github.com/CaulyKan/my-oh-my-zsh.git .oh-my-zsh/my-oh-my-zsh
+sudo -u $real_user git clone --recurse-submodules https://github.com/CaulyKan/my-oh-my-zsh.git .oh-my-zsh/my-oh-my-zsh
 echo "Done."
 
 echo "Config python"
