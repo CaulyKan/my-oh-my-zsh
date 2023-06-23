@@ -69,6 +69,7 @@ plugins=(
   extract
   z
   docker
+  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
